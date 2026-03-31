@@ -5,7 +5,7 @@ services:
       build:
         context: ./nginx # Instrução para construir a partir do Dockerfile em ./nginx
         dockerfile: Dockerfile
-      container_name: compose-web-lab6
+      container_name: compose-web-tf6
       ports: # Mapeamento para o acesso externo (Host 8000 -> Contêiner 80)
         - "8000:80"
       environment: # Variável para referência interna (DNS Interno)
@@ -16,7 +16,7 @@ services:
 # Serviço 2: Database (Redis)
   db_cache:
     image: redis:alpine
-    container_name: compose-redis-lab6
+    container_name: compose-redis-tf6
     volumes:
       # Monta o volume nomeado para persistência de dados
       - redis_data:/data
